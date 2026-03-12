@@ -1,9 +1,12 @@
-import useTheme from "@/hooks/useTheme";
+import useTheme, { ColorScheme } from "@/hooks/useTheme";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Index = () => {
-  const { toggleDarkMode } = useTheme();
+export default function Index() {
+  const { toggleDarkMode, colors } = useTheme();
+
+  const styles = createStyle(colors);
+
   return (
     <View
       style={{
@@ -12,6 +15,7 @@ const Index = () => {
         justifyContent: "center",
       }}
     >
+      <Text style={styles.content}>Welcome to the App</Text>
       <Text>Todos</Text>
       <Text>Hi</Text>
       <TouchableOpacity onPress={toggleDarkMode}>
@@ -19,5 +23,21 @@ const Index = () => {
       </TouchableOpacity>
     </View>
   );
+}
+
+const createStyle = (colors: ColorScheme) => {
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 10,
+      backgroundColor: colors.bg,
+    },
+    content: {
+      fontSize: 22,
+    },
+  });
+
+  return styles;
 };
-export default Index;
