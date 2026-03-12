@@ -15,7 +15,7 @@ const Header = () => {
   const todos = useQuery(api.todos.getTodos);
 
   const completedCount = todos
-    ? todos.filter((todo) => todo.isCompleted).length
+    ? todos.filter((todo) => todo.isComplete).length
     : 0;
 
   const totalCount = todos ? todos.length : 0;
