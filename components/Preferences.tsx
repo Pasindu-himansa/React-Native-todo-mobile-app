@@ -51,9 +51,28 @@ const Preferences = () => {
         </View>
         <Switch
           value={isNotificationsEnabled}
-          onValueChange={toggleDarkMode}
+          onValueChange={setIsNotificationsEnabled}
           thumbColor={"#fff"}
-          trackColor={{ false: colors.border, true: colors.primary }}
+          trackColor={{ false: colors.border, true: colors.warning }}
+        />
+      </View>
+
+      {/* Auto-Sync */}
+      <View style={settingStyles.settingItem}>
+        <View style={settingStyles.settingLeft}>
+          <LinearGradient
+            colors={colors.gradients.success}
+            style={settingStyles.settingIcon}
+          >
+            <Ionicons name="refresh" color="#fff" size={18} />
+          </LinearGradient>
+          <Text style={settingStyles.settingText}>Auto Sync</Text>
+        </View>
+        <Switch
+          value={isAutoSync}
+          onValueChange={() => setIsAutoSync(!isAutoSync)}
+          thumbColor={"#fff"}
+          trackColor={{ false: colors.border, true: colors.success }}
         />
       </View>
     </LinearGradient>
