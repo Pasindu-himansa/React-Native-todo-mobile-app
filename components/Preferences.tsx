@@ -64,7 +64,7 @@ const Preferences = () => {
             colors={colors.gradients.success}
             style={settingStyles.settingIcon}
           >
-            <Ionicons name="refresh" color="#fff" size={18} />
+            <Ionicons name="sync-outline" color="#fff" size={18} />
           </LinearGradient>
           <Text style={settingStyles.settingText}>Auto Sync</Text>
         </View>

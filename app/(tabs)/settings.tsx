@@ -5,6 +5,7 @@ import useTheme from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
+import DangerZone from "@/components/DangerZone";
 import { ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -37,6 +38,7 @@ const SettingScreen = () => {
         >
           <ProgressStats />
           <Preferences />
+          <DangerZone />
         </ScrollView>
       </SafeAreaView>
     </LinearGradient>
